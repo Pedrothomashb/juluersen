@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Germination - Julia Luersen Chaves Souza</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav>
+        <a href="../index.html" class="logo">Julia Luersen C. Souza</a>
+        <ul>
+            <li><a href="../index.html">Me</a></li>
+            <li class="nav-item">
+                <a href="#">Projects</a>
+                <div class="dropdown-menu">
+                    <a href="projeto1.html">HydroGen Power</a>
+                    <a href="projeto2.html">Snake Robotics Team</a>
+                    <a href="projeto3.html">Bean Germination</a>
+                </div>
+            </li>
+            <li><a>Sports</a></li>
+            <li><a>Volunteering</a></li>
+            <li><a>Hobbies</a></li>
+        </ul>
+    </nav>
+
+    <!-- Container Principal -->
+    <div class="container">
+
+        <!-- Layout Principal -->
+        <div class="main-wrapper">
+            <!-- Seção Central - Conteúdo -->
+            <div class="content-wrapper full-width">
+                <div class="circle-top-right"></div>
+                <div class="circle-bottom-left"></div>
+                <div class="topics-container project-page">
+                    
+                    <!-- PROJETO BEAN -->
+                    <div class="topic project-topic">
+                        <h2 class="topic-title project-title">Development of a Standardized Method for Conducting Bean Germination Experiments</h2>
+                        <p class="topic-text project-text">
+                            When I started my high school, my biology teacher called me to develop a project about helping the elementary teachers to find the best substrate to grow beans in the short term to demonstrate it in classes. The soil substrates analyzed were sand, cotton, fertilizer and Paraná's common soil. Observing the beans grow during one month, we concluded that each soil survey is better for each situation: if the teacher wants to demonstrate the roots, sand is the best option. Now, if the teacher wants to demonstrate the stem or leaves, fertilizer or common soil are great options. Moreover, if one wants to do the experiment without getting messy, they can use cotton. 
+                        </p>
+                        <div class="gallery-container">
+                            <div class="gallery-item" onclick="openModal(0, 'projeto2')">
+                                <img src="../assets/feijao/feijao1.jpeg" alt="Projeto - Imagem 1">
+                            </div>
+                            <div class="gallery-item" onclick="openModal(1, 'projeto2')">
+                                <img src="../assets/feijao/feijao2.jpeg" alt="Projeto - Imagem 2">
+                            </div>
+                            <div class="gallery-item" onclick="openModal(2, 'projeto2')">
+                                <img src="../assets/feijao/feijao3.jpeg" alt="Projeto - Imagem 3">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <strong>Contact:</strong><br>
+            <a href="mailto:julia.luersen@email.com">julialuersen173@gmail.com</a><br>
+            <a href="#">@ju.luersen</a>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Ampliação">
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/modal.js"></script>
+    <script src="../js/navigation.js"></script>
+</body>
+</html>

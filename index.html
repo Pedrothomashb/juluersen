@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julia Luersen Chaves Souza</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav>
+        <a href="index.html" class="logo">Julia Luersen C. Souza</a>
+        <ul>
+            <li><a href="index.html">Me</a></li>
+            <li class="nav-item">
+                <a href="#">Projects</a>
+                <div class="dropdown-menu">
+                    <a href="pages/projeto1.html">HydroGen Power</a>
+                    <a href="pages/projeto2.html">Snake Robotics Team</a>
+                    <a href="pages/projeto3.html">Bean Germination</a>
+                </div>
+            </li>
+            <li><a>Sports</a></li>
+            <li><a>Volunteering</a></li>
+            <li><a>Hobbies</a></li>
+        </ul>
+    </nav>
+
+    <!-- Container Principal -->
+    <div class="container">
+        <div class="circle-top-right"></div>
+
+        <!-- Layout Principal -->
+        <div class="main-wrapper">
+            <!-- Seção Esquerda - Foto -->
+            <div class="left-section">
+                <div class="photo-wrapper">
+                    <div class="circle-behind"></div>
+                    <div class="photo-container">
+                        <img src="assets/juliaPrincipal.png" alt="Julia Luersen">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção Central - Conteúdo -->
+            <div class="content-wrapper">
+                <div class="topics-container">
+                    <div class="topic">
+                        <h2 class="topic-title">From Science to Purpose</h2>
+                        <p class="topic-text">Between multimeters, prototypes, and good friends, science introduced me to my passion for energy and to my future. By dedicating my life to clean the planet, I am eager to learn everything I can to help protect the environment and spread the lessons learned.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção Direita - Fotos -->
+            <div class="right-section">
+                <div class="photo-card" onclick="openModal(0, 'home')">
+                    <img src="assets/hydroGen.jpeg" alt="Julia em evento científico">
+                </div>
+                <div class="photo-card" onclick="openModal(1, 'home')">
+                    <img src="assets/trofeuFtc.jpeg" alt="Julia com premiação">
+                </div>
+                <div class="photo-card" onclick="openModal(2, 'home')">
+                    <img src="assets/equipeFtc.jpeg" alt="Evento MostraTec">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <strong>Contact:</strong><br>
+            <a href="mailto:julia.luersen@email.com">julialuersen173@gmail.com</a><br>
+            <a href="#">@ju.luersen</a>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Ampliação">
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/modal.js"></script>
+    <script src="js/navigation.js"></script>
+</body>
+</html>

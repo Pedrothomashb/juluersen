@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Robotics Team - Julia Luersen Chaves Souza</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav>
+        <a href="../index.html" class="logo">Julia Luersen C. Souza</a>
+        <ul>
+            <li><a href="../index.html">Me</a></li>
+            <li class="nav-item">
+                <a href="#">Projects</a>
+                <div class="dropdown-menu">
+                    <a href="projeto1.html">HydroGen Power</a>
+                    <a href="projeto2.html">Snake Robotics Team</a>
+                    <a href="projeto3.html">Bean Germination</a>
+                </div>
+            </li>
+            <li><a>Sports</a></li>
+            <li><a>Volunteering</a></li>
+            <li><a>Hobbies</a></li>
+        </ul>
+    </nav>
+
+    <!-- Container Principal -->
+    <div class="container">
+
+        <!-- Layout Principal -->
+        <div class="main-wrapper">
+            <!-- Seção Central - Conteúdo -->
+            <div class="content-wrapper full-width">
+                <div class="circle-top-right"></div>
+                <div class="circle-bottom-left"></div>
+                <div class="topics-container project-page">
+                    
+                    <!-- PROJETO SNAKE -->
+                    <div class="topic project-topic">
+                        <h2 class="topic-title project-title">Snake Robotics Team</h2>
+                        <p class="topic-text project-text">
+                            When I began at Snake Robotics Team, I thought I would just fit LEGO blocks. Of course, I was wrong. Being on a robotics team teached me how to build robots and code them. More than this, I've learned how to manage my team, which has made me understand how to deal with different people and situations. 
+                        </p>
+                        <div class="gallery-container">
+                            <div class="gallery-item" onclick="openModal(0, 'projeto1')">
+                                <img src="../assets/snake/snake1.jpeg" alt="Projeto - Imagem 1">
+                            </div>
+                            <div class="gallery-item" onclick="openModal(1, 'projeto1')">
+                                <img src="../assets/snake/snake2.jpeg" alt="Projeto - Imagem 2">
+                            </div>
+                            <div class="gallery-item" onclick="openModal(2, 'projeto1')">
+                                <img src="../assets/snake/snake3.jpeg" alt="Projeto - Imagem 3">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <strong>Contact:</strong><br>
+            <a href="mailto:julia.luersen@email.com">julialuersen173@gmail.com</a><br>
+            <a href="#">@ju.luersen</a>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Ampliação">
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/modal.js"></script>
+    <script src="../js/navigation.js"></script>
+</body>
+</html>
