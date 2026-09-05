@@ -1,35 +1,24 @@
-// Função para ir para home
-function goToHome() {
-    window.location.href = '../index.html';
-}
+// Navegação compartilhada entre a página inicial e as páginas de projetos.
+document.addEventListener('DOMContentLoaded', function () {
+    const isInPages = window.location.pathname.includes('/pages/');
+    const homePath = isInPages ? '../index.html' : './index.html';
 
-// Setup dos links de navegação
-document.addEventListener('DOMContentLoaded', function() {
-    // Logo clicável para voltar ao home
     const logo = document.querySelector('.logo');
     if (logo) {
         logo.style.cursor = 'pointer';
-        // Remove o href e usa click listener
-        logo.addEventListener('click', function(e) {
+        logo.addEventListener('click', function (e) {
+            // Mantém o comportamento existente do logo.
+            if (logo.getAttribute('href')) return;
             e.preventDefault();
-            if (window.location.pathname.includes('pages/')) {
-                window.location.href = '../index.html';
-            } else {
-                window.location.href = './index.html';
-            }
+            window.location.href = homePath;
         });
     }
 
-    // Botão "Read More" para ir para home
     const readMoreBtn = document.querySelector('.read-more-btn');
     if (readMoreBtn) {
-        readMoreBtn.addEventListener('click', function(e) {
+        readMoreBtn.addEventListener('click', function (e) {
             e.preventDefault();
-            if (window.location.pathname.includes('pages/')) {
-                window.location.href = '../index.html';
-            } else {
-                window.location.href = './index.html';
-            }
+            window.location.href = homePath;
         });
     }
 });

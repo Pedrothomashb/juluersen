@@ -13,7 +13,7 @@ html, body {
 
 /* Navegação */
 nav {
-    background: #a5a24a;
+    background: #4A6FA5;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -293,7 +293,7 @@ nav a:hover {
 }
 
 .topic-text {
-    font-size: 2px;
+    font-size: 22px;
     line-height: 1.7;
     color: #555;
     text-align: center;
@@ -857,5 +857,341 @@ footer {
     .dropdown-menu a {
         padding: 10px 16px;
         font-size: 12px;
+    }
+}
+/* ==========================================================
+   Ajustes responsivos — desktop, tablet e celular
+   Mantém o layout original e evita overflow horizontal.
+   ========================================================== */
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+nav {
+    min-height: 70px;
+}
+
+.container {
+    min-height: calc(100vh - 70px);
+    height: auto;
+    overflow-x: hidden;
+}
+
+.main-wrapper {
+    min-width: 0;
+}
+
+.content-wrapper,
+.left-section,
+.right-section,
+.topic,
+.topics-container {
+    min-width: 0;
+}
+
+.topic-text.project-text {
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+.gallery-item {
+    flex: 0 1 200px;
+}
+
+.modal-content {
+    width: min(90vw, 600px);
+    max-width: calc(100vw - 24px);
+    max-height: calc(100vh - 40px);
+}
+
+.modal-content img {
+    max-height: calc(100vh - 100px);
+    object-fit: contain;
+}
+
+/* Tablets e notebooks menores */
+@media (max-width: 1100px) {
+    nav ul {
+        gap: 24px;
+    }
+
+    .content-wrapper.full-width {
+        padding-left: clamp(24px, 5vw, 70px);
+        padding-right: clamp(24px, 5vw, 70px);
+    }
+
+    .content-wrapper {
+        padding-right: clamp(24px, 5vw, 70px);
+    }
+
+    .topics-container.project-page {
+        max-width: 760px;
+    }
+}
+
+/* Celular/tablet em modo retrato */
+@media (max-width: 900px) {
+    nav {
+        position: sticky;
+        top: 0;
+        min-height: auto;
+        padding: 14px 20px;
+        gap: 12px 20px;
+    }
+
+    nav ul {
+        width: 100%;
+        justify-content: center;
+        gap: 10px 20px;
+    }
+
+    .container {
+        padding-top: 0;
+        min-height: auto;
+        height: auto;
+        margin-top: 0;
+        overflow: visible;
+    }
+
+    .main-wrapper {
+        min-height: 0;
+        height: auto;
+    }
+
+    .content-wrapper,
+    .content-wrapper.full-width {
+        width: 100%;
+        max-height: none;
+        overflow: visible;
+        padding: 42px 24px 110px;
+    }
+
+    .topics-container.project-page {
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .topic.project-topic {
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .topic-title.project-title {
+        font-size: clamp(24px, 5vw, 35px);
+        line-height: 1.25;
+    }
+
+    .topic-text.project-text {
+        font-size: clamp(15px, 2.1vw, 17px);
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    .gallery-container {
+        width: 100%;
+        gap: clamp(14px, 4vw, 28px);
+    }
+
+    .gallery-item {
+        flex: 1 1 180px;
+        max-width: 260px;
+    }
+
+    .left-section {
+        padding: 35px 20px 20px;
+    }
+
+    .right-section {
+        width: 100%;
+        flex: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 10px 20px 100px;
+    }
+
+    footer {
+        position: relative;
+    }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    nav {
+        padding: 12px 14px;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        font-size: clamp(15px, 4.2vw, 18px);
+    }
+
+    nav ul {
+        width: 100%;
+        gap: 8px;
+        justify-content: space-between;
+    }
+
+    nav a {
+        font-size: clamp(12px, 3.5vw, 14px);
+    }
+
+    .nav-item {
+        position: static;
+    }
+
+    .dropdown-menu {
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+        width: min(210px, calc(100vw - 28px));
+        min-width: 0;
+        max-width: calc(100vw - 28px);
+    }
+
+    .content-wrapper,
+    .content-wrapper.full-width {
+        padding: 28px 16px 60px;
+    }
+
+    .topic-title.project-title {
+        font-size: clamp(21px, 7vw, 28px);
+        letter-spacing: 1px;
+    }
+
+    .topic-text.project-text {
+        font-size: 15px;
+        line-height: 1.65;
+        text-align: left;
+    }
+
+    .gallery-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+    }
+
+    .gallery-item {
+        width: 100%;
+        max-width: none;
+        height: auto;
+        aspect-ratio: 1 / .9;
+    }
+
+    .gallery-item img {
+        display: block;
+    }
+
+    .photo-wrapper {
+        width: min(250px, 70vw);
+        height: auto;
+        aspect-ratio: 250 / 340;
+    }
+
+    .photo-container {
+        width: min(270px, 76vw);
+        height: auto;
+        aspect-ratio: 270 / 360;
+    }
+
+    .circle-behind {
+        width: min(380px, 105vw);
+        height: min(380px, 105vw);
+    }
+
+    .right-section {
+        gap: 10px;
+        padding: 10px 14px 50px;
+    }
+
+    .photo-card {
+        width: clamp(85px, 28vw, 105px);
+        height: clamp(85px, 28vw, 105px);
+    }
+
+    .circle-top-right {
+        width: 180px;
+        height: 180px;
+        top: -55px;
+        right: -75px;
+    }
+
+    .circle-bottom-left {
+        width: 160px;
+        height: 160px;
+        bottom: -55px;
+        left: -65px;
+    }
+
+    footer {
+        padding: 10px 14px;
+    }
+
+    .footer-content {
+        font-size: 12px;
+    }
+
+    .modal-content {
+        width: calc(100vw - 24px);
+        padding: 10px;
+    }
+
+    .modal-content img {
+        max-height: 78vh;
+    }
+
+    .close {
+        font-size: 26px;
+        line-height: 1;
+    }
+}
+
+/* Celulares muito pequenos */
+@media (max-width: 380px) {
+    nav ul {
+        gap: 6px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .content-wrapper,
+    .content-wrapper.full-width {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        aspect-ratio: 16 / 10;
+    }
+}
+
+/* Telas baixas: não deixa a navegação/rodapé cobrirem o conteúdo */
+@media (max-height: 650px) and (min-width: 901px) {
+    .content-wrapper {
+        padding-top: 35px;
+        padding-bottom: 90px;
+    }
+
+    footer {
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 }
