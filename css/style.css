@@ -1195,3 +1195,63 @@ nav {
         padding-bottom: 8px;
     }
 }
+
+
+/* Ajustes finais para celular */
+@media (max-width: 600px) {
+    /* Home: remove a foto principal e o círculo atrás dela */
+    body:has(.photo-wrapper) .left-section {
+        display: none;
+    }
+
+    /* Home: remove o círculo decorativo superior no celular */
+    body:has(.photo-wrapper) .circle-top-right {
+        display: none;
+    }
+
+    /* Projetos: círculos menores e fora da área de leitura */
+    .content-wrapper.full-width > .circle-top-right {
+        width: 90px;
+        height: 90px;
+        top: -35px;
+        right: -35px;
+        opacity: 0.9;
+        z-index: 0;
+    }
+
+    .content-wrapper.full-width > .circle-bottom-left {
+        width: 80px;
+        height: 80px;
+        bottom: -30px;
+        left: -30px;
+        opacity: 0.9;
+        z-index: 0;
+    }
+
+    /* Conteúdo sempre acima dos círculos */
+    .content-wrapper.full-width .topics-container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .content-wrapper.full-width .project-topic {
+        position: relative;
+        z-index: 3;
+    }
+}
+
+@media (max-width: 380px) {
+    .content-wrapper.full-width > .circle-top-right {
+        width: 70px;
+        height: 70px;
+        top: -25px;
+        right: -25px;
+    }
+
+    .content-wrapper.full-width > .circle-bottom-left {
+        width: 65px;
+        height: 65px;
+        bottom: -25px;
+        left: -25px;
+    }
+}
