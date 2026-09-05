@@ -1,16 +1,26 @@
 RewriteEngine On
 
 # URLs amigáveis dos projetos
-RewriteRule ^projeto1/?$ /pages/projeto1.html [L]
-RewriteRule ^projeto2/?$ /pages/projeto2.html [L]
-RewriteRule ^projeto3/?$ /pages/projeto3.html [L]
+RewriteRule ^HydroGen/?$ /pages/projeto1.html [L]
+RewriteRule ^SnakeTeam/?$ /pages/projeto2.html [L]
+RewriteRule ^BeansGermination/?$ /pages/projeto3.html [L]
 
-# Redireciona as URLs antigas para as URLs amigáveis
+# Redireciona URLs antigas para as novas URLs
+RewriteCond %{THE_REQUEST} \s/+projeto1[\s?] [NC]
+RewriteRule ^projeto1/?$ /HydroGen [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+projeto2[\s?] [NC]
+RewriteRule ^projeto2/?$ /SnakeTeam [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+projeto3[\s?] [NC]
+RewriteRule ^projeto3/?$ /BeansGermination [R=301,L]
+
+# Redireciona URLs antigas com .html
 RewriteCond %{THE_REQUEST} \s/+pages/projeto1\.html[\s?] [NC]
-RewriteRule ^pages/projeto1\.html$ /projeto1 [R=301,L]
+RewriteRule ^pages/projeto1\.html$ /HydroGen [R=301,L]
 
 RewriteCond %{THE_REQUEST} \s/+pages/projeto2\.html[\s?] [NC]
-RewriteRule ^pages/projeto2\.html$ /projeto2 [R=301,L]
+RewriteRule ^pages/projeto2\.html$ /SnakeTeam [R=301,L]
 
 RewriteCond %{THE_REQUEST} \s/+pages/projeto3\.html[\s?] [NC]
-RewriteRule ^pages/projeto3\.html$ /projeto3 [R=301,L]
+RewriteRule ^pages/projeto3\.html$ /BeansGermination [R=301,L]
