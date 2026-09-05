@@ -9,9 +9,10 @@ html, body {
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
+    scroll-behavior: smooth;
 }
 
-/* Navegação */
+/* Navegação - Responsiva */
 nav {
     background: #4A6FA5;
     display: flex;
@@ -19,31 +20,37 @@ nav {
     align-items: center;
     width: 100%;
     min-height: 70px;
-    padding: 18px clamp(20px, 5vw, 60px);
+    padding: 15px clamp(15px, 4vw, 60px);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .logo {
-    font-size: 18px;
+    font-size: clamp(14px, 3vw, 18px);
     font-weight: 500;
     color: white;
     letter-spacing: -0.5px;
     cursor: pointer;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .logo:hover {
     opacity: 0.8;
+    transition: opacity 0.3s;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 50px;
+    gap: clamp(20px, 4vw, 50px);
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 nav li {
@@ -54,14 +61,15 @@ nav li {
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: clamp(12px, 2.5vw, 16px);
     font-weight: 400;
     cursor: pointer;
     line-height: 1;
+    transition: opacity 0.3s;
 }
 
 nav a:hover {
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 .nav-item {
@@ -74,14 +82,14 @@ nav a:hover {
     display: inline-block;
 }
 
-/* Área invisível acima do dropdown para manter hover */
+/* Área invisível para dropdown */
 .nav-item::after {
     content: '';
     position: absolute;
     top: 100%;
-    left: -30px;
-    right: -30px;
-    height: 15px;
+    left: -20px;
+    right: -20px;
+    height: 12px;
     z-index: 100;
 }
 
@@ -91,17 +99,16 @@ nav a:hover {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: #4A6FA5;
-    border-radius: 8px;
-    padding: 12px 0;
-    margin-top: 8px;
-    min-width: 200px;
-    box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.2);
+    background: #3a5582;
+    border-radius: 6px;
+    padding: 10px 0;
+    margin-top: 6px;
+    min-width: min(180px, 90vw);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 101;
     white-space: nowrap;
 }
 
-/* Área de hover estendida para o dropdown */
 .nav-item:hover .dropdown-menu {
     display: block;
 }
@@ -112,33 +119,32 @@ nav a:hover {
 
 .dropdown-menu a {
     display: block;
-    padding: 14px 24px;
+    padding: clamp(10px, 2vw, 14px) clamp(16px, 3vw, 24px);
     color: white;
     text-decoration: none;
-    font-size: 15px;
+    font-size: clamp(12px, 2vw, 14px);
     font-weight: 400;
-    transition: background 0.3s;
+    transition: background 0.2s;
     text-align: center;
 }
 
 .dropdown-menu a:hover {
     background: #2d4463;
-    opacity: 1;
 }
 
 .dropdown-menu a:first-child {
-    border-radius: 8px 8px 0 0;
+    border-radius: 6px 6px 0 0;
 }
 
 .dropdown-menu a:last-child {
-    border-radius: 0 0 8px 8px;
-    padding-bottom: 20px;
+    border-radius: 0 0 6px 6px;
 }
 
 /* Container Principal */
 .container {
     width: 100%;
-    height: calc(100vh - 70px);
+    height: auto;
+    min-height: calc(100vh - 70px);
     background: #fffcf2;
     position: relative;
     overflow: hidden;
@@ -146,61 +152,63 @@ nav a:hover {
     padding-top: 70px;
 }
 
-/* Seção Central e Direita - Conteúdo */
-.content-wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 60px 150px 60px 40px;
-    overflow-y: auto;
-    max-height: calc(100vh - 70px);
-    position: relative;
-}
-
+/* Círculos decorativos */
 .circle-top-right {
     position: absolute;
-    width: clamp(110px, 30vw, 300px);
-    height: clamp(110px, 30vw, 300px);
+    width: clamp(200px, 35vw, 450px);
+    height: clamp(200px, 35vw, 450px);
     background: #3B5998;
     border-radius: 50%;
-    top: -80px;
-    right: -100px;
+    top: clamp(-50px, -10vh, -80px);
+    right: clamp(-80px, -8vw, -150px);
     z-index: 1;
     pointer-events: none;
 }
 
 .circle-bottom-left {
     position: absolute;
-    width: clamp(160px, 25vw, 300px);
-    height: clamp(160px, 25vw, 300px);
+    width: clamp(150px, 25vw, 350px);
+    height: clamp(150px, 25vw, 350px);
     background: #3B5998;
     border-radius: 50%;
-    bottom: -80px;
-    left: -100px;
+    bottom: clamp(-50px, -8vh, -100px);
+    left: clamp(-60px, -6vw, -120px);
     z-index: 1;
     pointer-events: none;
 }
 
-/* Seção Esquerda - Foto com Círculo */
+/* Layout Principal */
+.main-wrapper {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    height: auto;
+    min-height: 100%;
+    gap: 0;
+    flex-wrap: wrap;
+}
+
+/* Seção Esquerda - Foto */
 .left-section {
     flex: 0 0 auto;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 40px;
+    padding: clamp(30px, 5vw, 60px);
+    min-width: 280px;
 }
 
 .photo-wrapper {
     position: relative;
-    width: 380px;
-    height: 520px;
+    width: clamp(220px, 80vw, 380px);
+    height: clamp(300px, 110vw, 520px);
 }
 
 .circle-behind {
     position: absolute;
-    width: 580px;
-    height: 580px;
+    width: clamp(300px, 100vw, 580px);
+    height: clamp(300px, 100vw, 580px);
     background: #3B5998;
     border-radius: 50%;
     top: 80%;
@@ -211,8 +219,8 @@ nav a:hover {
 
 .photo-container {
     position: relative;
-    width: 400px;
-    height: 600px;
+    width: clamp(240px, 85vw, 400px);
+    height: clamp(330px, 115vw, 600px);
     z-index: 2;
 }
 
@@ -223,28 +231,33 @@ nav a:hover {
     border-radius: 0;
 }
 
-/* Seção Central e Direita - Conteúdo */
-.main-wrapper {
+/* Seção Central - Conteúdo */
+.content-wrapper {
+    flex: 1;
     display: flex;
+    flex-direction: column;
+    padding: clamp(30px, 5vw, 60px);
+    overflow-y: auto;
+    max-height: calc(100vh - 70px);
     position: relative;
-    z-index: 2;
-    height: 100%;
-    gap: 0;
+    min-width: 250px;
 }
 
 .content-wrapper.full-width {
-    padding: 60px 150px;
+    padding: clamp(35px, 6vw, 60px);
+    width: 100%;
+    max-height: none;
 }
 
 .name-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 52px;
+    font-size: clamp(28px, 7vw, 52px);
     font-style: normal;
     color: #2C3E50;
-    margin-bottom: 50px;
+    margin-bottom: clamp(25px, 4vw, 50px);
     font-weight: 400;
-    letter-spacing: 3px;
-    line-height: 1.1;
+    letter-spacing: clamp(1px, 0.5vw, 3px);
+    line-height: 1.2;
     text-transform: uppercase;
 }
 
@@ -252,82 +265,87 @@ nav a:hover {
     flex: 1;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: clamp(25px, 4vw, 40px);
     align-items: center;
     justify-items: center;
     width: 100%;
 }
 
 .topics-container.project-page {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .topic {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: clamp(10px, 2vw, 15px);
     text-align: center;
-    max-width: 700px;
+    max-width: 100%;
+    width: 100%;
 }
 
 .topic.project-topic {
-    max-width: 800px;
+    max-width: 100%;
+    width: 100%;
 }
 
 .topic-title {
-    font-size: 40px;
+    font-size: clamp(24px, 6vw, 60px);
     font-family: 'Lora', serif;
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: clamp(0.5px, 1vw, 2px);
     color: #2C3E50;
     text-transform: uppercase;
+    line-height: 1.2;
 }
 
 .topic-title.project-title {
-    font-size: 35px;
+    font-size: clamp(20px, 5vw, 35px);
     font-weight: 400;
-    letter-spacing: 2px;
-    font-family: 'Courier Prime', monospace;
     text-align: left;
+    font-family: 'Courier Prime', monospace;
+    line-height: 1.3;
 }
 
 .topic-text {
-    font-size: 20px;
-    line-height: 1.7;
+    font-size: clamp(16px, 4.5vw, 27px);
+    line-height: 1.6;
     color: #555;
     text-align: center;
     font-family: 'Lora', serif;
-    letter-spacing: 2px;
+    letter-spacing: clamp(0.5px, 1vw, 2px);
     font-style: italic;
 }
 
 .topic-text.project-text {
-    font-size: 16px;
+    font-size: clamp(14px, 3.5vw, 16px);
     font-weight: 400;
     text-transform: none;
     font-style: normal;
     text-align: justify;
     line-height: 1.8;
+    letter-spacing: 0.5px;
 }
 
 /* Seção Direita - Fotos */
 .right-section {
-    flex: 0 0 200px;
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: clamp(15px, 3vw, 20px);
     align-items: center;
     justify-content: flex-start;
-    padding-top: 25px;
+    padding: clamp(20px, 3vw, 25px);
+    min-width: 160px;
 }
 
 .photo-card {
-    width: 160px;
-    height: 160px;
-    border-radius: 20px;
+    width: clamp(110px, 25vw, 160px);
+    height: clamp(110px, 25vw, 160px);
+    border-radius: clamp(12px, 3vw, 20px);
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -340,8 +358,8 @@ nav a:hover {
 }
 
 .photo-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
 }
 
 .photo-card:hover img {
@@ -351,19 +369,20 @@ nav a:hover {
 /* Galeria Horizontal */
 .gallery-container {
     display: flex;
-    gap: 60px;
-    margin-top: 30px;
+    gap: clamp(20px, 4vw, 60px);
+    margin-top: clamp(20px, 3vw, 30px);
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
 }
 
 .gallery-item {
-    width: 200px;
-    height: 180px;
-    border-radius: 15px;
+    width: clamp(140px, 30vw, 200px);
+    height: clamp(130px, 27vw, 180px);
+    border-radius: clamp(10px, 2vw, 15px);
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -376,8 +395,8 @@ nav a:hover {
 }
 
 .gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
 }
 
 .gallery-item:hover img {
@@ -388,14 +407,14 @@ nav a:hover {
     display: inline-block;
     background: #4A6FA5;
     color: white;
-    padding: 12px 30px;
+    padding: clamp(10px, 2vw, 12px) clamp(24px, 4vw, 30px);
     border-radius: 25px;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    margin-top: 20px;
+    font-size: clamp(12px, 2vw, 14px);
+    letter-spacing: clamp(0.5px, 0.8vw, 1px);
+    margin-top: clamp(15px, 3vw, 20px);
     transition: background 0.3s, transform 0.3s;
     border: none;
     cursor: pointer;
@@ -408,14 +427,14 @@ nav a:hover {
 
 .read-more-btn::after {
     content: " →";
-    margin-left: 8px;
+    margin-left: 6px;
 }
 
 /* Rodapé */
 footer {
     background: #4A6FA5;
     color: white;
-    padding: 12px 60px;
+    padding: clamp(10px, 2vw, 12px) clamp(15px, 3vw, 60px);
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -423,7 +442,7 @@ footer {
 }
 
 .footer-content {
-    font-size: 14px;
+    font-size: clamp(11px, 2vw, 14px);
     line-height: 1.6;
 }
 
@@ -436,7 +455,7 @@ footer {
     text-decoration: underline;
 }
 
-/* Modal para ampliar fotos */
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -446,16 +465,16 @@ footer {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.7);
+    overflow: auto;
 }
 
 .modal-content {
     background-color: white;
     margin: auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
-    max-height: 80vh;
+    padding: clamp(15px, 3vw, 20px);
+    border-radius: 8px;
+    width: min(90vw, 600px);
+    max-height: 85vh;
     overflow: auto;
     position: absolute;
     top: 50%;
@@ -465,397 +484,332 @@ footer {
 
 .modal-content img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 .close {
     color: #aaa;
     float: right;
-    font-size: 28px;
+    font-size: clamp(20px, 5vw, 28px);
     font-weight: bold;
     cursor: pointer;
+    transition: color 0.2s;
 }
 
 .close:hover {
     color: #000;
 }
 
-/* Responsivo */
+/* ========== RESPONSIVIDADE ========== */
+
+/* Tablet - 1200px e abaixo */
 @media (max-width: 1200px) {
     nav {
-        padding-left: 35px;
-        padding-right: 35px;
+        gap: 8px;
     }
 
     nav ul {
-        gap: 28px;
-    }
-
-    .left-section {
-        padding-left: 25px;
-        padding-right: 25px;
-    }
-
-    .photo-wrapper {
-        width: 320px;
-        height: 460px;
-    }
-
-    .photo-container {
-        width: 340px;
-        height: 455px;
-    }
-
-    .circle-behind {
-        width: 500px;
-        height: 500px;
-    }
-
-    .content-wrapper {
-        padding-right: 60px;
-    }
-
-    .right-section {
-        flex-basis: 170px;
-    }
-
-    .photo-card {
-        width: 135px;
-        height: 135px;
-    }
-
-    .content-wrapper.full-width {
-        padding-left: 70px;
-        padding-right: 70px;
-    }
-
-    .topics-container.project-page {
-        max-width: 800px;
-    }
-
-    .gallery-container {
-        gap: 30px;
+        gap: clamp(18px, 3vw, 40px);
     }
 
     .dropdown-menu {
-        min-width: 220px;
-    }
-}
-
-@media (max-width: 900px) {
-    nav {
-        padding: 16px 25px;
-        flex-wrap: wrap;
-        row-gap: 12px;
-    }
-
-    nav ul {
-        gap: 22px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-    }
-
-    .container {
-        padding-top: 78px;
-        height: calc(100vh - 78px);
-    }
-
-    .main-wrapper {
-        flex-direction: column;
-        height: auto;
-        min-height: calc(100vh - 78px);
+        min-width: min(170px, 85vw);
     }
 
     .left-section {
-        padding: 35px 20px 20px;
-    }
-
-    .photo-wrapper {
-        width: min(300px, 75vw);
-        height: min(400px, 105vw);
-    }
-
-    .photo-container {
-        width: min(320px, 80vw);
-        height: min(425px, 110vw);
-    }
-
-    .circle-behind {
-        width: min(460px, 115vw);
-        height: min(460px, 115vw);
+        flex: 0 0 auto;
+        min-width: 260px;
+        padding: clamp(25px, 4vw, 40px);
     }
 
     .content-wrapper {
-        width: 100%;
         max-height: none;
-        overflow-y: visible;
-        padding: 30px 35px 80px;
+        padding: clamp(25px, 4vw, 40px);
     }
 
-    .content-wrapper.full-width {
-        padding: 45px 35px 100px;
+    .photo-card {
+        width: clamp(100px, 22vw, 140px);
+        height: clamp(100px, 22vw, 140px);
     }
 
     .right-section {
         flex: 0 0 auto;
-        width: 100%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-        padding: 10px 20px 100px;
-    }
-
-    .photo-card {
-        width: 130px;
-        height: 130px;
-    }
-
-    .topics-container.project-page {
-        width: 100%;
-        max-width: 800px;
-    }
-
-    .gallery-container {
-        gap: 20px;
-    }
-
-    .gallery-item {
-        width: 180px;
-        height: 165px;
-    }
-
-    .circle-top-right {
-        width: 260px;
-        height: 260px;
-        top: -70px;
-        right: -100px;
-    }
-
-    .circle-bottom-left {
-        width: 230px;
-        height: 230px;
-        bottom: -70px;
-        left: -90px;
-    }
-
-    .dropdown-menu {
-        min-width: 200px;
-    }
-
-    .dropdown-menu a {
-        font-size: 14px;
+        min-width: 140px;
+        padding: clamp(15px, 2vw, 20px);
     }
 }
 
-@media (max-width: 600px) {
+/* Tablet/Mobile - 900px e abaixo */
+@media (max-width: 900px) {
     nav {
-        padding: 13px 16px;
-        gap: 10px;
-    }
-
-    .logo {
-        font-size: 16px;
-    }
-
-    nav ul {
-        width: 100%;
+        flex-direction: row;
         justify-content: space-between;
-        gap: 8px 14px;
-    }
-
-    nav a {
-        font-size: 14px;
-    }
-
-    .dropdown-menu {
-        min-width: 170px;
-        margin-top: 8px;
-    }
-
-    .dropdown-menu a {
-        padding: 12px 20px;
-        font-size: 13px;
-    }
-
-    .container {
-        padding-top: 105px;
-        height: calc(100vh - 105px);
-    }
-
-    .main-wrapper {
-        min-height: calc(100vh - 105px);
-    }
-
-    .left-section {
-        padding: 30px 15px 10px;
-    }
-
-    .photo-wrapper {
-        width: 250px;
-        height: 340px;
-    }
-
-    .photo-container {
-        width: 270px;
-        height: 360px;
-    }
-
-    .circle-behind {
-        width: 380px;
-        height: 380px;
-    }
-
-    .content-wrapper {
-        padding: 25px 18px 90px;
-    }
-
-    .content-wrapper.full-width {
-        padding: 35px 18px 100px;
-    }
-
-    .name-title {
-        font-size: clamp(28px, 8vw, 36px);
-        margin-bottom: 25px;
-        letter-spacing: 2px;
-    }
-
-    .topic {
-        max-width: 100%;
-    }
-
-    .topic-title {
-        font-size: clamp(30px, 9vw, 45px);
-        letter-spacing: 1px;
-    }
-
-    .topic-title.project-title {
-        font-size: clamp(22px, 6vw, 28px);
-        line-height: 1.25;
-        text-align: left;
-    }
-
-    .topic-text {
-        font-size: clamp(18px, 5vw, 24px);
-        line-height: 1.5;
-        letter-spacing: 1px;
-    }
-
-    .topic-text.project-text {
-        font-size: 15px;
-        line-height: 1.7;
-        text-align: justify;
-    }
-
-    .right-section {
-        padding: 10px 15px 100px;
-    }
-
-    .photo-card {
-        width: 105px;
-        height: 105px;
-    }
-
-    .gallery-container {
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-        margin-top: 20px;
+        padding: 12px clamp(12px, 3vw, 25px);
+        gap: 8px;
     }
 
-    .gallery-item {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1 / 0.9;
-    }
-
-    .read-more-btn {
-        padding: 10px 22px;
-        font-size: 13px;
-    }
-
-    footer {
-        padding: 10px 16px;
-    }
-
-    .footer-content {
-        font-size: 12px;
-    }
-
-    .circle-top-right {
-        width: 190px;
-        height: 190px;
-        top: -55px;
-        right: -75px;
-    }
-
-    .circle-bottom-left {
-        width: 170px;
-        height: 170px;
-        bottom: -55px;
-        left: -65px;
-    }
-
-    .modal-content {
-        width: calc(100% - 24px);
-        max-height: 85vh;
-        padding: 12px;
-    }
-}
-
-@media (max-width: 380px) {
     nav ul {
-        gap: 7px 10px;
-    }
-
-    nav a {
-        font-size: 12px;
+        gap: clamp(12px, 2.5vw, 28px);
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 8px;
     }
 
     .container {
         padding-top: 100px;
-        height: calc(100vh - 100px);
-    }
-
-    .main-wrapper {
         min-height: calc(100vh - 100px);
     }
 
+    .main-wrapper {
+        flex-direction: column;
+        min-height: calc(100vh - 100px);
+    }
+
+    .left-section {
+        flex: 0 0 auto;
+        width: 100%;
+        min-width: auto;
+        padding: clamp(20px, 4vw, 30px);
+        order: 1;
+    }
+
     .photo-wrapper {
-        width: 220px;
-        height: 300px;
+        width: clamp(200px, 70vw, 300px);
+        height: clamp(280px, 100vw, 400px);
     }
 
     .photo-container {
-        width: 235px;
-        height: 315px;
+        width: clamp(220px, 75vw, 320px);
+        height: clamp(300px, 110vw, 425px);
     }
 
-    .circle-behind {
-        width: 330px;
-        height: 330px;
+    .content-wrapper {
+        width: 100%;
+        flex: auto;
+        max-height: none;
+        padding: clamp(25px, 4vw, 35px);
+        order: 2;
     }
 
-    .gallery-container {
-        gap: 10px;
-    }
-
-    .gallery-item {
-        border-radius: 10px;
+    .right-section {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: clamp(12px, 3vw, 18px);
+        padding: clamp(20px, 3vw, 25px);
+        order: 3;
     }
 
     .photo-card {
-        width: 90px;
-        height: 90px;
+        width: clamp(90px, 20vw, 130px);
+        height: clamp(90px, 20vw, 130px);
     }
 
     .dropdown-menu {
-        min-width: 150px;
+        min-width: min(160px, 80vw);
+    }
+
+    footer {
+        padding: 10px clamp(12px, 3vw, 20px);
+    }
+}
+
+/* Mobile - 600px e abaixo */
+@media (max-width: 600px) {
+    nav {
+        min-height: auto;
+        padding: 12px clamp(10px, 3vw, 15px);
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 8px;
+        order: 1;
+    }
+
+    nav ul {
+        gap: clamp(10px, 2vw, 16px);
+        width: 100%;
+        order: 2;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: clamp(11px, 2vw, 13px);
+    }
+
+    .dropdown-menu {
+        min-width: min(150px, 75vw);
+        font-size: clamp(10px, 1.8vw, 12px);
     }
 
     .dropdown-menu a {
-        padding: 10px 16px;
-        font-size: 12px;
+        padding: clamp(8px, 1.5vw, 10px) clamp(12px, 2vw, 16px);
+        font-size: clamp(10px, 1.8vw, 12px);
+    }
+
+    .container {
+        padding-top: 110px;
+        min-height: calc(100vh - 110px);
+    }
+
+    .left-section {
+        width: 100%;
+        padding: clamp(20px, 3vw, 25px);
+    }
+
+    .photo-wrapper {
+        width: clamp(180px, 65vw, 250px);
+        height: clamp(250px, 90vw, 350px);
+    }
+
+    .photo-container {
+        width: clamp(200px, 70vw, 270px);
+        height: clamp(275px, 100vw, 360px);
+    }
+
+    .circle-behind {
+        width: clamp(260px, 90vw, 380px);
+        height: clamp(260px, 90vw, 380px);
+    }
+
+    .content-wrapper {
+        padding: clamp(20px, 3vw, 30px);
+    }
+
+    .topics-container {
+        gap: clamp(15px, 3vw, 25px);
+    }
+
+    .topic {
+        gap: clamp(8px, 1.5vw, 12px);
+    }
+
+    .right-section {
+        gap: clamp(12px, 2.5vw, 15px);
+        padding: clamp(15px, 2vw, 20px);
+    }
+
+    .photo-card {
+        width: clamp(80px, 18vw, 110px);
+        height: clamp(80px, 18vw, 110px);
+    }
+
+    .gallery-container {
+        gap: clamp(12px, 2vw, 18px);
+    }
+
+    .gallery-item {
+        width: clamp(120px, 28vw, 160px);
+        height: clamp(110px, 25vw, 150px);
+    }
+
+    .read-more-btn {
+        padding: clamp(8px, 1.5vw, 10px) clamp(20px, 3vw, 24px);
+        font-size: clamp(11px, 1.8vw, 13px);
+    }
+
+    footer {
+        padding: 8px clamp(10px, 2vw, 15px);
+        font-size: clamp(10px, 1.8vw, 12px);
+    }
+
+    .circle-top-right {
+        width: clamp(150px, 30vw, 250px);
+        height: clamp(150px, 30vw, 250px);
+        top: clamp(-40px, -8vh, -60px);
+        right: clamp(-50px, -5vw, -80px);
+    }
+
+    .circle-bottom-left {
+        width: clamp(120px, 22vw, 200px);
+        height: clamp(120px, 22vw, 200px);
+        bottom: clamp(-40px, -6vh, -70px);
+        left: clamp(-40px, -4vw, -70px);
+    }
+
+    .modal-content {
+        width: min(95vw, 500px);
+        max-height: 80vh;
+    }
+}
+
+/* Telefone pequeno - 380px e abaixo */
+@media (max-width: 380px) {
+    nav {
+        padding: 10px clamp(8px, 2vw, 12px);
+    }
+
+    .logo {
+        font-size: clamp(12px, 2.5vw, 14px);
+    }
+
+    nav ul {
+        gap: clamp(8px, 1.5vw, 12px);
+    }
+
+    nav a {
+        font-size: clamp(10px, 1.8vw, 12px);
+    }
+
+    .left-section {
+        padding: clamp(15px, 2vw, 20px);
+    }
+
+    .photo-wrapper {
+        width: clamp(150px, 60vw, 200px);
+        height: clamp(210px, 85vw, 300px);
+    }
+
+    .photo-container {
+        width: clamp(170px, 65vw, 220px);
+        height: clamp(235px, 95vw, 310px);
+    }
+
+    .content-wrapper {
+        padding: clamp(15px, 2.5vw, 20px);
+    }
+
+    .name-title {
+        font-size: clamp(20px, 5vw, 28px);
+        margin-bottom: clamp(15px, 2vw, 20px);
+    }
+
+    .topic-title {
+        font-size: clamp(18px, 4.5vw, 24px);
+    }
+
+    .topic-text {
+        font-size: clamp(13px, 3vw, 16px);
+        line-height: 1.5;
+    }
+
+    .gallery-container {
+        gap: clamp(10px, 1.5vw, 12px);
+    }
+
+    .gallery-item {
+        width: clamp(100px, 25vw, 130px);
+        height: clamp(90px, 22vw, 120px);
+    }
+
+    footer {
+        font-size: clamp(9px, 1.5vw, 10px);
+    }
+
+    .close {
+        font-size: clamp(18px, 4vw, 24px);
+    }
+}
+
+/* Ajustes gerais de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
     }
 }
