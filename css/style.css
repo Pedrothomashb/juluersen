@@ -1294,3 +1294,10 @@ nav {
         text-align: justify;
     }
 }
+
+@media (max-width: 600px) {
+    .topic-text.project-text,
+    .topic-text.project-text p {
+        text-align: justify !important;
+    }
+}
