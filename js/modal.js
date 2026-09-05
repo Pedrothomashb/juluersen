@@ -9,12 +9,13 @@ const photoUrls = {
         'hydropower/hydro1.jpeg',
         'hydropower/hydro2.jpeg',
         'hydropower/hydro3.jpeg',
-        'hydropower/hydroout.jpeg'
+        'hydropower/hydropessoal.jpeg'
     ],
     projeto1: [
         'snake/snake1.jpeg',
         'snake/snake2.jpeg',
-        'snake/snake3.jpeg'
+        'snake/snake3.jpeg',
+        'snake/snake4.jpeg'
     ],
     projeto2: [
         'feijao/feijao1.jpeg',
