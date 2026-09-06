@@ -26,5 +26,5 @@ RewriteCond %{THE_REQUEST} \s/+pages/projeto3\.html[\s?] [NC]
 RewriteRule ^pages/projeto3\.html$ /BeansGermination [R=301,L]
 
 # URLs amigáveis dos esportes
-RewriteRule ^Tenis&Beach/?$ /pages/sports-tenis.html [L]
-RewriteRule ^Dances/?$ /pages/sports-dance.html [L]
+RewriteRule ^Tenis&Beach/?$ /sports/sports-tenis.html [L]
+RewriteRule ^Dances/?$ /sports/sports-dance.html [L]
