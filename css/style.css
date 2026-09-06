@@ -181,6 +181,16 @@ nav a:hover {
     pointer-events: none;
 }
 
+.photo-left {
+    position: absolute;
+    width: clamp(160px, 25vw, 300px);
+    height: clamp(160px, 25vw, 300px);
+    bottom: -80px;
+    left: -100px;
+    z-index: 1;
+    pointer-events: none;
+}
+
 /* Seção Esquerda - Foto com Círculo */
 .left-section {
     flex: 0 0 auto;
