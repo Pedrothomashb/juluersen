@@ -21,6 +21,20 @@ const photoUrls = {
         'feijao/feijao1.jpeg',
         'feijao/feijao2.jpeg',
         'feijao/feijao3.jpeg'
+    ],
+    sports1: [
+        'sports/tennis1.jpeg',
+        'sports/tennis2.jpeg',
+        'sports/tennis3.jpeg',
+        'sports/tennis4.jpeg',
+        'sports/tennis5.jpeg'
+    ],
+    sports2: [
+        'dance/ballet1.jpeg',
+        'dance/ballet2.jpeg',
+        'dance/ballet3.jpeg',
+        'dance/jazz1.jpeg',
+        'dance/jazz2.jpeg'
     ]
 };
 
