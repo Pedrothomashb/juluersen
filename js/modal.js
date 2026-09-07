@@ -34,7 +34,7 @@ const photoUrls = {
         'dance/ballet2.jpeg',
         'dance/ballet3.jpeg',
         'dance/jazz1.jpeg',
-        'dance/jazz2.jpeg'
+        'dance/jazz22.jpeg'
     ]
 };
 
