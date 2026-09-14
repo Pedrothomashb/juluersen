@@ -35,6 +35,13 @@ const photoUrls = {
         'dance/ballet3.jpeg',
         'dance/jazz1.jpeg',
         'dance/jazz22.jpeg'
+    ],
+    church: [
+        'church/Church.jpeg',
+        'church/Church1.jpeg',
+        'church/ChurchEverybody.jpeg',
+        'church/ChurchSinging.jpeg',
+        'church/ChurchSinging1.jpeg'
     ]
 };
 
