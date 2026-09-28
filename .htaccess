@@ -31,3 +31,7 @@ RewriteRule ^Dances/?$ /sports/sports-dance.html [L]
 
 # URLs amigáveis dos Volunteering
 RewriteRule ^Church/?$ /volunteering/church-youth.html [L]
+
+# URLs amigáveis dos Hobbies
+RewriteRule ^Music/?$ /hobbies/hobbies1.html [L]
+RewriteRule ^DirtBikeRider/?$ /hobbies/hobbies2.html [L]
