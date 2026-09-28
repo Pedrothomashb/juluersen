@@ -42,6 +42,11 @@ const photoUrls = {
         'volunteering/ChurchEverybody.jpeg',
         'volunteering/ChurchSinging.jpeg',
         'volunteering/ChurchSinging1.jpeg'
+    ],
+    hobbies: [
+        'hobbies/music.jpeg',
+        'hobbies/music1.jpeg',
+        'hobbies/music2.jpeg'
     ]
 };
 
