@@ -1,24 +1,22 @@
-// Navegação compartilhada entre a página inicial e as páginas de projetos.
+// Dropdowns do menu: hover no desktop, toque/clique no celular.
 document.addEventListener('DOMContentLoaded', function () {
-    const isInPages = window.location.pathname.includes('/pages/');
-    const homePath = isInPages ? '../index.html' : './index.html';
+    const items = document.querySelectorAll('.nav-item');
 
-    const logo = document.querySelector('.logo');
-    if (logo) {
-        logo.style.cursor = 'pointer';
-        logo.addEventListener('click', function (e) {
-            // Mantém o comportamento existente do logo.
-            if (logo.getAttribute('href')) return;
-            e.preventDefault();
-            window.location.href = homePath;
-        });
-    }
+    items.forEach(function (item) {
+        const toggle = item.querySelector('.dropdown-toggle');
+        if (!toggle) return;
 
-    const readMoreBtn = document.querySelector('.read-more-btn');
-    if (readMoreBtn) {
-        readMoreBtn.addEventListener('click', function (e) {
+        toggle.addEventListener('click', function (e) {
             e.preventDefault();
-            window.location.href = homePath;
+            const isOpen = item.classList.contains('open');
+            items.forEach(function (i) { i.classList.remove('open'); });
+            if (!isOpen) item.classList.add('open');
         });
-    }
+    });
+
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.nav-item')) {
+            items.forEach(function (i) { i.classList.remove('open'); });
+        }
+    });
 });

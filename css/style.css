@@ -106,7 +106,8 @@ nav a:hover {
     display: block;
 }
 
-.dropdown-menu:hover {
+.dropdown-menu:hover,
+.nav-item.open .dropdown-menu {
     display: block;
 }
 
@@ -236,17 +237,6 @@ nav a:hover {
     padding: 60px 150px;
 }
 
-.name-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 52px;
-    font-style: normal;
-    color: #2C3E50;
-    margin-bottom: 50px;
-    font-weight: 400;
-    letter-spacing: 3px;
-    line-height: 1.1;
-    text-transform: uppercase;
-}
 
 .topics-container {
     flex: 1;
@@ -384,32 +374,8 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-.read-more-btn {
-    display: inline-block;
-    background: #4A6FA5;
-    color: white;
-    padding: 12px 30px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    margin-top: 20px;
-    transition: background 0.3s, transform 0.3s;
-    border: none;
-    cursor: pointer;
-}
 
-.read-more-btn:hover {
-    background: #3a5582;
-    transform: translateY(-2px);
-}
 
-.read-more-btn::after {
-    content: " →";
-    margin-left: 8px;
-}
 
 /* Rodapé */
 footer {
@@ -714,12 +680,6 @@ footer {
         padding: 35px 18px 100px;
     }
 
-    .name-title {
-        font-size: clamp(28px, 8vw, 36px);
-        margin-bottom: 25px;
-        letter-spacing: 2px;
-    }
-
     .topic {
         max-width: 100%;
     }
@@ -768,11 +728,6 @@ footer {
         width: 100%;
         height: auto;
         aspect-ratio: 1 / 0.9;
-    }
-
-    .read-more-btn {
-        padding: 10px 22px;
-        font-size: 13px;
     }
 
     footer {
@@ -1287,17 +1242,7 @@ nav {
 
 @media (max-width: 600px) {
     .topic-text,
-    .project-text,
-    .text-content,
-    .about-text,
-    .description {
+    .topic-text.project-text {
         text-align: justify;
-    }
-}
-
-@media (max-width: 600px) {
-    .topic-text.project-text,
-    .topic-text.project-text p {
-        text-align: justify !important;
     }
 }

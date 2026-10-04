@@ -1,42 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../assets/icon/iconeJL.ico">
-    <title>Jazz Dance & Ballet - Julia Luersen Chaves Souza</title>
-    <link rel="stylesheet" href="../css/style.css?v=12">
+    <title>Jazz Dance &amp; Ballet - Julia Luersen Chaves Souza</title>
+    <link rel="icon" type="image/x-icon" href="../assets/icon/iconeJL.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=13">
 </head>
 <body>
     <!-- Navegação -->
     <nav>
         <a href="/" class="logo">Julia Luersen C. Souza</a>
         <ul>
-            <a href="/">Me</a>
-
+            <li><a href="/">Me</a></li>
             <li class="nav-item">
-                <a href="#">Projects</a>
-
+                <a href="#" class="dropdown-toggle">Projects</a>
                 <div class="dropdown-menu">
                     <a href="/HydroGen">HydroGen Power</a>
                     <a href="/SnakeTeam">Snake Robotics Team</a>
                     <a href="/BeansGermination">Bean Germination</a>
                 </div>
             </li>
-
             <li class="nav-item">
-                <a href="#">Sports</a>
-                
+                <a href="#" class="dropdown-toggle">Sports</a>
                 <div class="dropdown-menu">
-                    <a href="/Tenis&Beach">Tennis & Beach Tennis</a>
-                    <a href="/Dances">Jazz Dance & Ballet</a>
+                    <a href="/Tenis&amp;Beach">Tennis &amp; Beach Tennis</a>
+                    <a href="/Dances">Jazz Dance &amp; Ballet</a>
                 </div>
             </li>
             <li><a href="/Church">Church Youth</a></li>
             <li class="nav-item">
-                <a href="#">Hobbies</a>
-                
+                <a href="#" class="dropdown-toggle">Hobbies</a>
                 <div class="dropdown-menu">
                     <a href="/Music">Music</a>
                     <a href="/DirtBikeRider">Dirt Bike Rider</a>
@@ -66,11 +63,11 @@
                             From a very young age, I grew up on stage, performing in celebrations such as Mother’s Day, Christmas, and other special occasions. Between countless rehearsals, performances, and hours spent practicing in pointe shoes, I developed not only my motor coordination, but also resilience, discipline, and meaningful friendships.
                         </p>
                         <div class="gallery-container">
-                            <div class="gallery-item" onclick="openModal(0, 'sports2')">
-                                <img src="../assets/dance/ballet1.jpeg" alt="Ballet - Imagem 1">
+                            <div class="gallery-item">
+                                <img src="../assets/dance/ballet1.jpeg" alt="Ballet - Photo 1">
                             </div>
-                            <div class="gallery-item" onclick="openModal(1, 'sports2')">
-                                <img src="../assets/dance/ballet2.jpeg" alt="Ballet - Imagem 2">
+                            <div class="gallery-item">
+                                <img src="../assets/dance/ballet2.jpeg" alt="Ballet - Photo 2">
                             </div>
                         </div>
 
@@ -79,7 +76,7 @@
                             More than just a physical activity, ballet and jazz became an important part of my personal journey and introduced me to my best friends, Giovanna and Ana Laura. Our friendship grew through years of rehearsals, performances, and shared experiences. Even after I decided to end my dancing career, our friendship remained strong. Giovanna continued dancing, and I have always supported and encouraged her. Ana, on the other hand, improved her academic career and became a pre-med student. Looking back, I realize that ballet gave me much more than the ability to dance. It gave me memories, friendships, and lessons that I continue to carry with me.
                         </p>
                         <div class="project-logo-container">
-                            <img class="project-logo" src="../assets/dance/jazz22.jpeg" alt="Friends">
+                            <img class="project-logo" src="../assets/dance/jazz22.jpeg" alt="Julia with friends from dance">
                         </div>
                     </div>
                 </div>
@@ -91,21 +88,21 @@
     <footer>
         <div class="footer-content">
             <strong>Contact:</strong><br>
-            <a href="mailto:julia.luersen@email.com">julialuersen173@gmail.com</a><br>
-            <a href="#">@ju.luersen</a>
+            <a href="mailto:julialuersen173@gmail.com">julialuersen173@gmail.com</a><br>
+            <a href="https://www.instagram.com/ju.luersen/" target="_blank" rel="noopener">@ju.luersen</a>
         </div>
     </footer>
 
     <!-- Modal -->
     <div id="photoModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="modalImage" src="" alt="Ampliação">
+            <span class="close" aria-label="Close">&times;</span>
+            <img id="modalImage" src="" alt="Enlarged photo">
         </div>
     </div>
 
     <!-- Scripts -->
-    <script src="../js/modal.js?v=5"></script>
-    <script src="../js/navigation.js?v=5"></script>
+    <script src="../js/modal.js?v=7"></script>
+    <script src="../js/navigation.js?v=7"></script>
 </body>
 </html>

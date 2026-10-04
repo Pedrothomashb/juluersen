@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../assets/icon/iconeJL.ico">
-    <title>Tennis & Beach Tennis - Julia Luersen Chaves Souza</title>
-    <link rel="stylesheet" href="../css/style.css?v=12">
+    <title>Music - Julia Luersen Chaves Souza</title>
+    <link rel="icon" type="image/x-icon" href="../assets/icon/iconeJL.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=13">
 </head>
 <body>
     <!-- Navegação -->
     <nav>
         <a href="/" class="logo">Julia Luersen C. Souza</a>
         <ul>
-            <a href="/">Me</a>
-
+            <li><a href="/">Me</a></li>
             <li class="nav-item">
-                <a href="#">Projects</a>
-
+                <a href="#" class="dropdown-toggle">Projects</a>
                 <div class="dropdown-menu">
                     <a href="/HydroGen">HydroGen Power</a>
                     <a href="/SnakeTeam">Snake Robotics Team</a>
@@ -25,17 +25,15 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a href="#">Sports</a>
-                
+                <a href="#" class="dropdown-toggle">Sports</a>
                 <div class="dropdown-menu">
-                    <a href="/Tenis&Beach">Tennis & Beach Tennis</a>
-                    <a href="/Dances">Jazz Dance & Ballet</a>
+                    <a href="/Tenis&amp;Beach">Tennis &amp; Beach Tennis</a>
+                    <a href="/Dances">Jazz Dance &amp; Ballet</a>
                 </div>
             </li>
             <li><a href="/Church">Church Youth</a></li>
             <li class="nav-item">
-                <a href="#">Hobbies</a>
-                
+                <a href="#" class="dropdown-toggle">Hobbies</a>
                 <div class="dropdown-menu">
                     <a href="/Music">Music</a>
                     <a href="/DirtBikeRider">Dirt Bike Rider</a>
@@ -55,18 +53,18 @@
                 <div class="circle-bottom-left"></div>
                 <div class="topics-container project-page">
                     
-                    <!-- SPORTS - TENNIS -->
+                    <!-- HOBBIES - MUSIC -->
                     <div class="topic project-topic">
                         <h2 class="topic-title project-title">Singer, Keyboardist and Guitarist</h2>
                         <p class="topic-text project-text">
                             Being frequently at church, music was always a part of my life. Over time, it sparked a new hobby in me: playing the guitar. After a few years of playing, my curiosity led me to the ukulele — almost like a little guitar with fewer strings. It was easier to learn, but its sound had a completely different character.
                         </p>
                         <div class="gallery-container">
-                            <div class="gallery-item" onclick="openModal(0, 'hobbies')">
-                                <img src="../assets/hobbies/music.jpeg" alt="Tennis - Imagem 1">
+                            <div class="gallery-item">
+                                <img src="../assets/hobbies/music.jpeg" alt="Music - Photo 1">
                             </div>
-                            <div class="gallery-item" onclick="openModal(2, 'hobbies')">
-                                <img src="../assets/hobbies/music2.jpeg" alt="Tennis - Imagem 2">
+                            <div class="gallery-item">
+                                <img src="../assets/hobbies/music2.jpeg" alt="Music - Photo 2">
                             </div>
                         </div>
 
@@ -76,7 +74,7 @@
                         </p>
 
                         <div class="project-logo-container">
-                            <img class="project-logo" src="../assets/hobbies/music1.jpeg" alt="Apresentação">
+                            <img class="project-logo" src="../assets/hobbies/music1.jpeg" alt="Music performance">
                         </div>
 
                         <p class="topic-text project-text">
@@ -93,21 +91,21 @@
     <footer>
         <div class="footer-content">
             <strong>Contact:</strong><br>
-            <a href="mailto:julia.luersen@email.com">julialuersen173@gmail.com</a><br>
-            <a href="#">@ju.luersen</a>
+            <a href="mailto:julialuersen173@gmail.com">julialuersen173@gmail.com</a><br>
+            <a href="https://www.instagram.com/ju.luersen/" target="_blank" rel="noopener">@ju.luersen</a>
         </div>
     </footer>
 
     <!-- Modal -->
     <div id="photoModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="modalImage" src="" alt="Ampliação">
+            <span class="close" aria-label="Close">&times;</span>
+            <img id="modalImage" src="" alt="Enlarged photo">
         </div>
     </div>
 
     <!-- Scripts -->
-    <script src="../js/modal.js?v=6"></script>
-    <script src="../js/navigation.js?v=5"></script>
+    <script src="../js/modal.js?v=7"></script>
+    <script src="../js/navigation.js?v=7"></script>
 </body>
 </html>
