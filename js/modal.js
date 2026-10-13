@@ -16,7 +16,7 @@
     }
 
     document.addEventListener('click', function (event) {
-        const card = event.target.closest('.photo-card, .gallery-item');
+        const card = event.target.closest('.photo-card, .gallery-item, .certificate-frame');
         if (card) {
             const img = card.querySelector('img');
             if (img) openModal(img);

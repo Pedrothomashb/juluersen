@@ -49,6 +49,8 @@ nav ul {
 nav li {
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
 }
 
 nav a {
@@ -1244,5 +1246,101 @@ nav {
     .topic-text,
     .topic-text.project-text {
         text-align: justify;
+    }
+}
+
+/* ==========================================================
+   Página de Certificados — um abaixo do outro, com moldura
+   ========================================================== */
+.certificates-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+.certificate {
+    width: 100%;
+    max-width: 640px;
+    margin: 0;
+}
+
+.certificate-frame {
+    background: #fff;
+    padding: 14px;
+    border: 2px solid #4A6FA5;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.certificate-frame:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.certificate-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid #e3ddcb;
+}
+
+.certificate-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-top: 14px;
+    text-align: center;
+}
+
+.certificate-name {
+    font-family: 'Courier Prime', monospace;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #2C3E50;
+}
+
+.certificate-date {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #777;
+}
+
+@media (max-width: 600px) {
+    .certificates-list {
+        gap: 40px;
+        margin-top: 20px;
+    }
+
+    .certificate-frame {
+        padding: 8px;
+    }
+
+    .certificate-name {
+        font-size: 14px;
+    }
+
+    .certificate-date {
+        font-size: 13px;
+    }
+}
+
+/* Menu com 6 itens: mantém em uma linha no celular */
+@media (max-width: 600px) {
+    nav ul {
+        flex-wrap: nowrap;
+        gap: 6px;
+    }
+
+    nav ul > li > a {
+        font-size: clamp(11px, 3.1vw, 13px);
+        white-space: nowrap;
     }
 }

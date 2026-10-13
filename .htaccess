@@ -35,3 +35,5 @@ RewriteRule ^Church/?$ /volunteering/church-youth.html [L]
 # URLs amigáveis dos Hobbies
 RewriteRule ^Music/?$ /hobbies/hobbies1.html [L]
 RewriteRule ^DirtBikeRider/?$ /hobbies/hobbies2.html [L]
+# URLs amigáveis dos Certificados
+RewriteRule ^Certificates/?$ /certificates/certificates.html [L]
