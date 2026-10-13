@@ -1344,3 +1344,141 @@ nav {
         white-space: nowrap;
     }
 }
+
+/* ==========================================================
+   Julia saindo das bolinhas (Tennis & Beach Tennis)
+   As bolinhas ficam dentro do conteúdo e rolam junto com a página.
+   ========================================================== */
+.has-cutouts {
+    --d: min(40vh, 20vw, 380px); /* diâmetro da bolinha da esquerda */
+    --floor-l: 86px;             /* base da bolinha da esquerda (encostada no rodapé) */
+}
+
+.cutouts {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cutout {
+    position: absolute;
+}
+
+.cutout-circle {
+    position: absolute;
+    z-index: 0;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #3B5998;
+}
+
+/* A sombra fica no wrapper para não ser cortada pela máscara da foto */
+.cutout-photo {
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 100%;
+    filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.18));
+}
+
+.cutout img {
+    display: block;
+    width: auto;
+    height: 100%;
+    max-width: none;
+}
+
+/* Esquerda: a borda da bolinha corta as pernas na canela, escondendo os pés;
+   a bolinha passa um pouco da borda esquerda */
+.cutout-left {
+    left: calc(var(--d) * -0.091);
+    bottom: calc(var(--floor-l) - var(--d) * 0.0726);
+    height: calc(var(--d) * 1.4785);
+}
+
+.cutout-left .cutout-circle {
+    left: 1.21%;
+    top: 28.13%;
+    width: 103.99%;
+}
+
+.cutout-left img {
+    /* visível: tudo acima da cintura + dentro da bolinha */
+    -webkit-mask-image:
+        linear-gradient(#000, #000),
+        radial-gradient(51.99% 33.48% at 53.21% 61.61%, #000 99.4%, transparent 100%);
+            mask-image:
+        linear-gradient(#000, #000),
+        radial-gradient(51.99% 33.48% at 53.21% 61.61%, #000 99.4%, transparent 100%);
+    -webkit-mask-size: 100% 40.18%, 100% 100%;
+            mask-size: 100% 40.18%, 100% 100%;
+    -webkit-mask-position: 0 0, 0 0;
+            mask-position: 0 0, 0 0;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+}
+
+/* Direita: fica ao lado da segunda seção de fotos (o .cutout-anchor marca a altura).
+   A borda da bolinha corta na barra do short, escondendo as pernas,
+   e a bolinha passa um pouco da borda direita */
+.cutout-anchor {
+    height: 0;
+    margin-top: -15px; /* compensa o gap do .topic */
+}
+
+.cutout-right {
+    z-index: 1;
+    pointer-events: none;
+    right: calc(var(--d) * 0.008);
+    margin-top: calc(var(--d) * -1.1564 + 40px); /* base da bolinha 40px abaixo das fotos */
+    height: calc(var(--d) * 1.386);
+}
+
+.cutout-right .cutout-circle {
+    left: 39.87%;
+    top: 26.87%;
+    width: 70.89%;
+}
+
+.cutout-right img {
+    /* visível: tudo acima do peito + dentro da bolinha + raquete/bolinha à esquerda */
+    -webkit-mask-image:
+        linear-gradient(#000, #000),
+        radial-gradient(35.44% 28.28% at 75.32% 55.15%, #000 99.3%, transparent 100%),
+        linear-gradient(#000, #000);
+            mask-image:
+        linear-gradient(#000, #000),
+        radial-gradient(35.44% 28.28% at 75.32% 55.15%, #000 99.3%, transparent 100%),
+        linear-gradient(#000, #000);
+    -webkit-mask-size: 100% 56.57%, 100% 100%, 50.63% 83.84%;
+            mask-size: 100% 56.57%, 100% 100%, 50.63% 83.84%;
+    -webkit-mask-position: 0 0, 0 0, 0 0;
+            mask-position: 0 0, 0 0, 0 0;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+}
+
+@media (min-width: 901px) {
+    .has-cutouts .content-wrapper.full-width {
+        overflow-x: hidden;
+        /* Texto nunca passa por cima das fotos */
+        padding-left: calc(var(--d) * 0.861 + 28px);
+        padding-right: calc(var(--d) * 1.114 + 28px);
+    }
+}
+
+/* Desktop: a bolinha antiga do canto esquerdo dá lugar à foto */
+@media (min-width: 901px) {
+    .has-cutouts .circle-bottom-left {
+        display: none;
+    }
+}
+
+/* Tablet e celular: sem as fotos, fica como era antes */
+@media (max-width: 900px) {
+    .cutouts,
+    .cutout-anchor {
+        display: none;
+    }
+}
