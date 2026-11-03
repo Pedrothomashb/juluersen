@@ -84,7 +84,7 @@ Developed by Pedro Thomas.
 
 Site pessoal de portfólio da Julia Luersen Chaves Souza, com projetos científicos, esportes, voluntariado, hobbies e certificados. O conteúdo das páginas é em inglês.
 
-🌐 **[julialuersen.com](https://julialuersen.com)**
+**[julialuersen.com](https://julialuersen.com)**
 
 Feito com HTML, CSS e JavaScript puro, sem framework e sem build. Hospedagem em Apache, com URLs amigáveis no `.htaccess`.
 
