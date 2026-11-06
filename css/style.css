@@ -1482,3 +1482,101 @@ nav {
         display: none;
     }
 }
+
+/* ==========================================================
+   Home: Julia saindo da bolinha + fotos da direita centralizadas
+   ========================================================== */
+.home-page {
+    --home-footer: 114px; /* altura do rodapé da home (4 linhas) */
+}
+
+/* Foto principal: bolinha grande com a Julia à direita do centro;
+   a borda da bolinha corta as pernas, como na página de tênis */
+.photo-wrapper.hero-cut {
+    --hero-h: min(79vh, 48vw, 760px);
+    position: relative;
+    width: auto;
+    height: var(--hero-h);
+    aspect-ratio: auto;
+}
+
+.hero-cut .circle-behind {
+    left: -44.09%;
+    top: 17.25%;
+    width: 145.16%;
+    height: auto;
+    aspect-ratio: 1;
+    transform: none;
+    z-index: 0;
+}
+
+.hero-cut .photo-container {
+    position: relative;
+    z-index: 2;
+    width: auto;
+    height: 100%;
+    filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.18));
+}
+
+.hero-cut .photo-container img {
+    display: block;
+    width: auto;
+    height: 100%;
+    max-width: none;
+    object-fit: fill;
+    /* visível: metade de cima + dentro da bolinha */
+    -webkit-mask-image:
+        linear-gradient(#000, #000),
+        radial-gradient(72.58% 40.85% at 28.49% 58.09%, #000 99.5%, transparent 100%);
+            mask-image:
+        linear-gradient(#000, #000),
+        radial-gradient(72.58% 40.85% at 28.49% 58.09%, #000 99.5%, transparent 100%);
+    -webkit-mask-size: 100% 58.09%, 100% 100%;
+            mask-size: 100% 58.09%, 100% 100%;
+    -webkit-mask-position: 0 0, 0 0;
+            mask-position: 0 0, 0 0;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+}
+
+@media (min-width: 901px) {
+    /* Área entre a navbar e o rodapé */
+    .home-page .main-wrapper {
+        height: calc(100vh - 70px - var(--home-footer));
+    }
+
+    /* Bolinha encostada no rodapé, saindo pela borda esquerda */
+    .home-page .left-section {
+        align-items: flex-end;
+        padding: 0 20px 0 40px;
+    }
+
+    .home-page .photo-wrapper.hero-cut {
+        margin-bottom: calc(var(--hero-h) * -0.0106 - 4px);
+    }
+
+    /* Texto e fotos da direita centralizados na vertical */
+    .home-page .content-wrapper {
+        justify-content: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .home-page .right-section {
+        justify-content: center;
+        padding-top: 0;
+    }
+}
+
+@media (max-height: 650px) and (min-width: 901px) {
+    .home-page {
+        --home-footer: 106px;
+    }
+}
+
+@media (max-width: 900px) {
+    .photo-wrapper.hero-cut {
+        --hero-h: min(440px, 100vw);
+        margin: 0 auto;
+    }
+}
